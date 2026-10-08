@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+html,
+body {
+  background: #fafaf9;
+  color: #1c1917;
+  font-family:
+    "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* 모바일에서 입력창 포커스 시 확대 방지 (16px 이상) */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-sheet {
+  animation: sheet-up 0.22s ease-out;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-toast {
+  animation: toast-in 0.18s ease-out;
+}
